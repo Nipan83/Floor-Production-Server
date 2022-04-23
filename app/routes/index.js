@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const path = require('path');
+const express = require('express');
+const station = require(path.resolve('./app/routes/station'));
+const router = express.Router(); 
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.json({ title: 'Floor Production APIs' });
+  res.json({'message':'Floor Production APIs'});
 });
+
+router.use('/station', station);
 
 module.exports = router;
