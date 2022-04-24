@@ -51,6 +51,4 @@ Thumbs.db
 
 .env
 
-config/
-
 package-lock.json
