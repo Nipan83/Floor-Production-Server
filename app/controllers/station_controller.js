@@ -41,7 +41,9 @@ exports.addStation =  async(req, res) =>
 
 exports.getAllStations =  async(req, res) =>
 {
-	let stations = await Station.findAll();
+	let stations = await Station.findAll({
+		order: ['id']
+	});
 
 	res.status(HttpStatus.OK).send({
 		message: `success!`,
