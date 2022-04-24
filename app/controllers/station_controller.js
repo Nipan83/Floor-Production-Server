@@ -1,7 +1,7 @@
 const { Op } = require("sequelize");
 const {Station} = require('../../models/index');
 const HttpStatus = require('http-status-codes');
-const ValidationContract = require('../services/validator');
+const ValidationContract = require('../services/Validator');
 
 exports.addStation =  async(req, res) =>
 {	
