@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Station.hasMany(models.HourlyScoreboard, {foreignKey: 'station_id', onDelete: 'cascade'})
     }
   };
   Station.init({
