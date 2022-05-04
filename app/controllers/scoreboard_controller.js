@@ -57,6 +57,26 @@ exports.getAllScoreboardDataByStationId =  async(req, res) =>
 
 }
 
+
+exports.getAllScoreboardDataByStationIdAndDate =  async(req, res) =>
+{
+	let station_id = req.params.station_id;
+	let date = req.params.date;
+	let scoreboards = await HourlyScoreboard.findAll({
+		where: {station_id:station_id,business_date:date},
+		order: ['id']
+	});
+
+	res.status(HttpStatus.OK).send({
+		message: `success!`,
+		status: HttpStatus.OK,
+		result: scoreboards
+	});
+
+}
+
+
+
 exports.updateScoreboard =  async(req, res) =>
 {	
 	let id = req.params.id;
